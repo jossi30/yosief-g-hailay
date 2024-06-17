@@ -1,0 +1,67 @@
+:root {
+    --nav-background-light: rgba(255, 255, 255, 0.2);
+    --nav-background-dark: rgba(0, 0, 0, 0.5); /* Darker background for dark theme */
+    --nav-item-background-light: rgba(0, 0, 0, 0.2);
+    --nav-item-background-dark: rgba(255, 255, 255, 0.2); /* Lighter item background for dark theme */
+  }
+  
+  .floatingNav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--nav-background-light); /* Default to light theme */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .navItem {
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nav-item-background-light); /* Default to light theme */
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .navItem:hover {
+    background-color: lightblue;
+  }
+  
+  .navIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  @media (max-width: 768px) {
+    .floatingNav {
+      top: auto;
+      bottom: 20px;
+      right: 50%;
+      transform: translateX(50%);
+      flex-direction: row;
+    }
+  
+    .navItem {
+      margin: 0 10px;
+    }
+  }
+  
+  /* Dark theme overrides */
+  [data-theme="dark"] .floatingNav {
+    background-color: var(--nav-background-dark);
+  }
+  
+  [data-theme="dark"] .navItem {
+    background-color: var(--nav-item-background-dark);
+  }
+  

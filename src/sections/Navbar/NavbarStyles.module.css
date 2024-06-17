@@ -1,8 +1,8 @@
 :root {
     --nav-background-light: rgba(255, 255, 255, 0.2);
-    --nav-background-dark: rgba(0, 0, 0, 0.5); /* Darker background for dark theme */
+    --nav-background-dark: rgba(39, 39, 39, 0.5); /* Darker background for dark theme */
     --nav-item-background-light: rgba(0, 0, 0, 0.2);
-    --nav-item-background-dark: rgba(255, 255, 255, 0.2); /* Lighter item background for dark theme */
+    --nav-item-background-dark: rgba(230, 219, 219, 0.671); /* Lighter item background for dark theme */
   }
   
   .floatingNav {
@@ -30,7 +30,7 @@
     background-color: var(--nav-item-background-light); /* Default to light theme */
     padding: 8px;
     border-radius: 50%;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
   }
   
   .navItem:hover {

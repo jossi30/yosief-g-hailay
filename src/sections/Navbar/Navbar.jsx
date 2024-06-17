@@ -1,19 +1,21 @@
-
+import React from 'react';
 import { useTheme } from '../../common/ThemeContext';
 import { motion } from 'framer-motion';
 import homeLightIcon from '../../assets/home-light.svg';
 import homeDarkIcon from '../../assets/home-dark.svg';
-import aboutLightIcon from '../../assets/aboutme-light.svg';
-import aboutDarkIcon from '../../assets/aboutme-dark.svg';
-import projectsLightIcon from '../../assets/projects-light.svg';
-import projectsDarkIcon from '../../assets/projects-dark.svg';
+import aboutLightIcon from '../../assets/person-light.svg';
+import aboutDarkIcon from '../../assets/person-dark.svg';
+import projectsLightIcon from '../../assets/project-light.svg';
+import projectsDarkIcon from '../../assets/project-dark.svg';
 import contactLightIcon from '../../assets/contact-light.svg';
 import contactDarkIcon from '../../assets/contact-dark.svg';
+import sunIcon from '../../assets/moon.svg';
+import moonIcon from '../../assets/sun.svg';
 
 import styles from './NavbarStyles.module.css';
 
 function FloatingNav() {
-  const { theme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { href: "#home", lightIcon: homeLightIcon, darkIcon: homeDarkIcon, label: "Home" },
@@ -35,6 +37,14 @@ function FloatingNav() {
           <img src={theme === 'light' ? item.lightIcon : item.darkIcon} alt={item.label} className={styles.navIcon} />
         </motion.a>
       ))}
+      <motion.button
+        onClick={toggleTheme}
+        className={styles.navItem}
+        whileHover={{ scale: 1.2 }}
+        title="Toggle Theme"
+      >
+        <img src={theme === 'light' ? moonIcon : sunIcon} alt="Toggle Theme" className={styles.navIcon} />
+      </motion.button>
     </div>
   );
 }

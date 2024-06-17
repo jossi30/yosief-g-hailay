@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTheme } from '../../common/ThemeContext';
 import { motion } from 'framer-motion';
 import homeLightIcon from '../../assets/home-light.svg';
@@ -19,7 +18,7 @@ function FloatingNav() {
 
   const navItems = [
     { href: "#home", lightIcon: homeLightIcon, darkIcon: homeDarkIcon, label: "Home" },
-    { href: "#about", lightIcon: aboutLightIcon, darkIcon: aboutDarkIcon, label: "About Us" },
+    { href: "#about", lightIcon: aboutLightIcon, darkIcon: aboutDarkIcon, label: "About Me" },
     { href: "#projects", lightIcon: projectsLightIcon, darkIcon: projectsDarkIcon, label: "Projects" },
     { href: "#contact", lightIcon: contactLightIcon, darkIcon: contactDarkIcon, label: "Contact" },
   ];
